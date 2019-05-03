@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-    <img alt="The WT" src="/static/logo.png" width="150px">
+    <img alt="The WT" src="/static/img/logo.png" width="150px">
 </p>
 <br>
 <p align="center">
