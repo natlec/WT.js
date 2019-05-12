@@ -2,62 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <title>THE WT</title>
+    <meta name="description" content="Discover the latest fashion and trends in menswear and womenswear at The WT. Shop this season's collection of clothes, accessories, beauty and more.">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
-
-    <header class="banner">
-        <h1>The WT</h1>
+    <header>
+        <svg viewBox="0 0 745 141" xmlns="http://www.w3.org/2000/svg" width="95px">
+            <g fill="#0a0519">
+                <path d="m37 29h-37v-29h106v29h-38v111h-31z"/>
+                <path d="m129 0h31v55h52v-54h31v140h-31v-57h-52v57h-31z"/>
+                <path d="m435.68 1h32.7l24.13 91.54 26.73-91.54h27.32l26.92 91.54 23.93-91.54h32.31l-42.88 140h-27.12l-26.92-85.55-27.12 85.55h-27.33z"/>
+                <path d="m677 29h-38v-29h106v29h-37v111h-31z"/>
+            </g>
+            <path d="m279 0h96v29h-96z" fill="#6432ff"/>
+            <path d="m283.13 112h-4.13v29h96v-29z" fill="#6432ff"/>
+            <path d="m375 83v-27h-96v27h4.13z" fill="#6432ff"/>
+        </svg>
     </header>
-
-    <div class="content">
-
-        <p>These URLs return JSON responses:</p>
-        <ul>
-            <li><a href="/products">List of Products</a></li>
-            <li><a href="/cart">Contents of Cart</a></li>
+    <main>
+        <ul class="product-list">
+            <!-- {{#each product}}
+                <li class="product-list-item">
+                    <div class="image">
+                        <img src="{{image}}" alt="{{name}}">
+                    </div>
+                    <h2>{{name}}</h2>
+                    <h3 class="cost">{{cost}}</h3>
+                </li>
+            {{/each}} -->
+            <li class="product-list-item">
+                <div class="image">
+                    <img src="/" alt="{{name}}">
+                </div>
+                <h2>Product title</h2>
+                <h3 class="cost">$400</h3>
+            </li>
+            <li class="product-list-item">
+                <div class="image">
+                    <img src="/" alt="{{name}}">
+                </div>
+                <h2>Product title</h2>
+                <h3 class="cost">$400</h3>
+            </li>
+            <li class="product-list-item">
+                <div class="image">
+                    <img src="/" alt="{{name}}">
+                </div>
+                <h2>Product title</h2>
+                <h3 class="cost">$400</h3>
+            </li>
+            <li class="product-list-item">
+                <div class="image">
+                    <img src="/" alt="{{name}}">
+                </div>
+                <h2>Product title</h2>
+                <h3 class="cost">$400</h3>
+            </li>
+            <li class="product-list-item">
+                <div class="image">
+                    <img src="/" alt="{{name}}">
+                </div>
+                <h2>Product title</h2>
+                <h3 class="cost">$400</h3>
+            </li>
         </ul>
+    </main>
 
-        <p></p>
+    <!-- Cart / Cart banner -->
+    <div class="cart">
 
-        <form action="/cart" method="post">
-            <fieldset>
-                <legend>This form will add to the cart with a given product id</legend>
-                <ul>
-                    <li>Product: <input type="number" name="productid"></li>
-                    <li>Quantity: <input type="number" name="quantity"></li>
-                    <li><input type="submit"></li>
-                </ul>
-                <input type="hidden" name="update" value="0">
-            </fieldset>
-        </form>
+        <!-- Cart banner -->
+        <div class="cart-info">
+            <h2 class="total">$182</h2>
+            <p>&nbsp; total in cart</p>
+            <div class="icon">
+                <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 4h5l1 4h24l-2 14h-22l-2.5-16h-3.5zm10 20a3 3 0 0 0 0 6 3 3 0 0 0 0-6m14 0a3 3 0 0 0 0 6 3 3 0 0 0 0-6"/>
+                </svg>
+                <span>0</span>
+            </div>
+            <b>View cart</b>
+        </div>
 
-        <form action="/cart" method="post">
-            <fieldset>
-                <legend>This form will update the cart with a given product id, or remove if quantity=0</legend>
-                <ul>
-                    <li>Product: <input type="number" name="productid"></li>
-                    <li>Quantity: <input type="number" name="quantity"></li>
-                    <li><input type="submit"></li>
-                </ul>
-                <input type="hidden" name="update" value="1">
-            </fieldset>
-        </form>
-
-     <div id="message"></div>
-
+        <!-- Cart items -->
+        <ul class="cart-items">
+            {{#each cart}}
+                <li class="cart-item">
+                    <form action="/cart" method="post">
+                        <div class="image">
+                            <img src="{{image}}" alt="{{name}}">
+                        </div>
+                        <h3 class="name">{{name}}</h3>
+                        <h4 class="cost">{{cost}}</h4>
+                        <input class="quantity" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" max="{{quantity_max}}" required>
+                        <input type="hidden" name="productid" value="1">
+                        <input type="hidden" name="update" value="1">
+                    </form>
+                </li>
+            {{/each}}
+        </ul>
     </div>
 
-    <footer class="banner">
-        <p>Copyright &copy; 2019 COMP249 Web Technology</p>
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2019 Nathan Lecompte</p>
     </footer>
 
-    <!-- load Javascript -->
+    <!-- Load Javascript -->
     <script src="/static/js/handlebars-v4.1.2.js"></script>
     <script src="/static/js/jquery-3.4.0.js"></script>
-    <script src="/static/js/script.js"></script>
-
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
 
