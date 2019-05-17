@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <svg viewBox="0 0 745 141" xmlns="http://www.w3.org/2000/svg" width="95px">
             <g fill="#0a0519">
@@ -22,10 +23,16 @@
             <path d="m375 83v-27h-96v27h4.13z" fill="#6432ff"/>
         </svg>
     </header>
+    
+    <!-- Main content -->
     <main>
-        <div class="products-title">
-            <h1>All products</h1>
-            <select class="products-sort">
+        <!-- Products banner -->
+        <div class="products-banner">
+            <div class="info">
+                <h1>All products</h1>
+                <p>Explore our entire range of products for both men & women.</p>
+            </div>
+            <select class="products-sort button-alt">
                 <option value="pricehigh">Sort by price high to low</option>
                 <option value="pricelow">Sort by price low to high</option>
                 <option value="nameA">Sort by name (A-Z)</option>
@@ -33,103 +40,12 @@
             </select>
         </div>
         <br>
-        <ul class="products">
-            <!-- {{#each product}}
-                <li class="product-list-item">
-                    <div class="image">
-                        <img src="{{image}}" alt="{{name}}">
-                    </div>
-                    <h2>{{name}}</h2>
-                    <h3 class="cost">{{cost}}</h3>
-                    <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
-                </li>
-            {{/each}} -->
-            <li class="product-item product-expanded">
-                <div class="header">
-                    <div class="image">
-                        <img src="/" alt="{{name}}">
-                    </div>
-                    <h2>Product title</h2>
-                    <p class="quantity">Quantity: 2</p>
-                    <h3 class="cost">$400</h3>
-                    <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
-                </div>
-                <div class="info">
-                    <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id nulla vehicula, accumsan odio eu, malesuada ipsum. Sed vitae quam rhoncus, porta lacus id, blandit risus. Morbi faucibus mauris vitae leo consequat, at euismod tellus congue. Nullam nec augue elit. Fusce varius justo vel augue sodales fermentum. Aliquam ac diam sem. Mauris a scelerisque ante. Donec orci enim, placerat vitae dapibus vitae, porta ut mauris. Maecenas nisl purus, mollis eu ante vitae, pulvinar elementum elit. Cras mollis ut velit vel suscipit. Aenean dictum, lectus faucibus pretium tempus, nibh tortor consequat arcu, at varius eros dui ut mi. Aliquam ut rutrum nisi. 
-                    </p>
-                </div>
-            </li>
-            <li class="product-item">
-                <div class="image">
-                    <img src="/" alt="{{name}}">
-                </div>
-                <h2>Product title</h2>
-                <h3 class="cost">$400</h3>
-                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
-            </li>
-            <li class="product-item">
-                <div class="image">
-                    <img src="/" alt="{{name}}">
-                </div>
-                <h2>Product title</h2>
-                <h3 class="cost">$400</h3>
-                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
-            </li>
-            <li class="product-item">
-                <div class="image">
-                    <img src="/" alt="{{name}}">
-                </div>
-                <h2>Product title</h2>
-                <h3 class="cost">$400</h3>
-                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
-            </li>
-            <li class="product-item">
-                <div class="image">
-                    <img src="/" alt="{{name}}">
-                </div>
-                <h2>Product title</h2>
-                <h3 class="cost">$400</h3>
-                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
-            </li>
-        </ul>
+        <!-- Products -->
+        <ul class="products"></ul>
     </main>
 
-    <!-- Cart / Cart banner -->
-    <div class="cart">
-
-        <!-- Cart banner -->
-        <div class="cart-info">
-            <h2 class="total">$182</h2>
-            <p>&nbsp; total in cart</p>
-            <div class="icon">
-                <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m0 4h5l1 4h24l-2 14h-22l-2.5-16h-3.5zm10 20a3 3 0 0 0 0 6 3 3 0 0 0 0-6m14 0a3 3 0 0 0 0 6 3 3 0 0 0 0-6"/>
-                </svg>
-                <span>0</span>
-            </div>
-            <b>View cart</b>
-        </div>
-
-        <!-- Cart items -->
-        <ul class="cart-items">
-            {{#each cart}}
-                <li class="cart-item">
-                    <form action="/cart" method="post">
-                        <div class="image">
-                            <img src="{{image}}" alt="{{name}}">
-                        </div>
-                        <h3 class="name">{{name}}</h3>
-                        <h4 class="cost">{{cost}}</h4>
-                        <input class="quantity" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" max="{{quantity_max}}" required>
-                        <input type="hidden" name="productid" value="1">
-                        <input type="hidden" name="update" value="1">
-                    </form>
-                </li>
-            {{/each}}
-        </ul>
-    </div>
-
+    <!-- Cart -->
+    <div class="cart"></div>
     <hr>
 
     <!-- Footer -->
@@ -137,9 +53,81 @@
         <p>Copyright &copy; 2019 Nathan Lecompte</p>
     </footer>
 
+    <!-- Product item template -->
+    <script id="product-template" type="text/x-handlebars-template">
+        {{#each products}}
+            <li class="product-item" data-id="{{id}}">
+                <div class="image">
+                    <img src="{{image_url}}" alt="{{name}}">
+                </div>
+                <div class="right">
+                    <div class="header" title="Toggle product information">
+                        <div class="title">
+                            <b>{{category}}'s</b>
+                            <h2>{{name}}</h2>
+                        </div>
+                        {{#-if inventory '>' 0 }}
+                            <p class="quantity">{{inventory}} in stock</p>
+                        {{else}}
+                            <p class="quantity">Out of stock</p>
+                        {{/-if}}
+                        <h3 class="cost">${{unit_cost}}</h3>
+                        <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/>
+                            <path d="m0-.25h48v48h-48z" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="info">
+                        {{{description}}}
+                        {{#-if inventory '>' 0 }}
+                            <form method="POST" action="/cart">
+                                <input type="number" name="quantity" value="1" min="1" max="{{inventory}}" required>
+                                <input type="hidden" name="productid" value="{{id}}" required>
+                                <input type="submit" value="Add to Cart" title="Add to cart">
+                                <input type="hidden" name="update" value="1">
+                            </form>
+                        {{/-if}}
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+
+    <!-- Cart item template -->
+    <script id="cart-template" type="text/x-handlebars-template">
+        <!-- Cart items -->
+        <ul class="cart-items">
+            {{#each cart}}
+                <li class="cart-item">
+                    <h3 class="name">{{name}}</h3>
+                    <h4 class="cost">${{cost}}</h4>
+                    <form action="/cart" method="post">
+                        <input class="quantity" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" required>
+                        <input type="hidden" name="productid" value="1">
+                        <input type="hidden" name="update" value="1">
+                    </form>
+                </li>
+            {{/each}}
+        </ul>
+        <!-- Cart banner -->
+        <div class="cart-info" title="Toggle cart">
+            <h2 class="total">${{cartTotal}}</h2>
+            <p>&nbsp; total in cart</p>
+            <div class="icon">
+                <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 4h5l1 4h24l-2 14h-22l-2.5-16h-3.5zm10 20a3 3 0 0 0 0 6 3 3 0 0 0 0-6m14 0a3 3 0 0 0 0 6 3 3 0 0 0 0-6"/>
+                </svg>
+                <span>{{cartCount}}</span>
+            </div>
+            <b class="toggle">Show cart</b>
+        </div>
+    </script>
+
     <!-- Load Javascript -->
     <script src="/static/js/handlebars-v4.1.2.js"></script>
     <script src="/static/js/jquery-3.4.0.js"></script>
+    <script src="/static/js/products.js"></script>
+    <script src="/static/js/cart.js"></script>
     <script src="/static/js/main.js"></script>
 </body>
 </html>
