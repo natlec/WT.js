@@ -4,7 +4,7 @@
 </p>
 <br>
 <p align="center">
-  An online store web-application written in Python.
+  An online store web-application written in JQuery & Python.
 </p>
 <br>
 
