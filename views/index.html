@@ -23,7 +23,17 @@
         </svg>
     </header>
     <main>
-        <ul class="product-list">
+        <div class="products-title">
+            <h1>All products</h1>
+            <select class="products-sort">
+                <option value="pricehigh">Sort by price high to low</option>
+                <option value="pricelow">Sort by price low to high</option>
+                <option value="nameA">Sort by name (A-Z)</option>
+                <option value="nameZ">Sort by name (Z-A)</option>
+            </select>
+        </div>
+        <br>
+        <ul class="products">
             <!-- {{#each product}}
                 <li class="product-list-item">
                     <div class="image">
@@ -31,42 +41,56 @@
                     </div>
                     <h2>{{name}}</h2>
                     <h3 class="cost">{{cost}}</h3>
+                    <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
                 </li>
             {{/each}} -->
-            <li class="product-list-item">
-                <div class="image">
-                    <img src="/" alt="{{name}}">
+            <li class="product-item product-expanded">
+                <div class="header">
+                    <div class="image">
+                        <img src="/" alt="{{name}}">
+                    </div>
+                    <h2>Product title</h2>
+                    <p class="quantity">Quantity: 2</p>
+                    <h3 class="cost">$400</h3>
+                    <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
                 </div>
-                <h2>Product title</h2>
-                <h3 class="cost">$400</h3>
+                <div class="info">
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id nulla vehicula, accumsan odio eu, malesuada ipsum. Sed vitae quam rhoncus, porta lacus id, blandit risus. Morbi faucibus mauris vitae leo consequat, at euismod tellus congue. Nullam nec augue elit. Fusce varius justo vel augue sodales fermentum. Aliquam ac diam sem. Mauris a scelerisque ante. Donec orci enim, placerat vitae dapibus vitae, porta ut mauris. Maecenas nisl purus, mollis eu ante vitae, pulvinar elementum elit. Cras mollis ut velit vel suscipit. Aenean dictum, lectus faucibus pretium tempus, nibh tortor consequat arcu, at varius eros dui ut mi. Aliquam ut rutrum nisi. 
+                    </p>
+                </div>
             </li>
-            <li class="product-list-item">
+            <li class="product-item">
                 <div class="image">
                     <img src="/" alt="{{name}}">
                 </div>
                 <h2>Product title</h2>
                 <h3 class="cost">$400</h3>
+                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
             </li>
-            <li class="product-list-item">
+            <li class="product-item">
                 <div class="image">
                     <img src="/" alt="{{name}}">
                 </div>
                 <h2>Product title</h2>
                 <h3 class="cost">$400</h3>
+                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
             </li>
-            <li class="product-list-item">
+            <li class="product-item">
                 <div class="image">
                     <img src="/" alt="{{name}}">
                 </div>
                 <h2>Product title</h2>
                 <h3 class="cost">$400</h3>
+                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
             </li>
-            <li class="product-list-item">
+            <li class="product-item">
                 <div class="image">
                     <img src="/" alt="{{name}}">
                 </div>
                 <h2>Product title</h2>
                 <h3 class="cost">$400</h3>
+                <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/><path d="m0-.25h48v48h-48z" fill="none"/></svg>
             </li>
         </ul>
     </main>

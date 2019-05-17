@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 h1 {
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 /* Global > Links */
@@ -101,6 +101,7 @@ hr {
 
 /* Global > Textboxes */
 input,
+select,
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -122,11 +123,13 @@ input[type='number'] {
     transition: .2s ease;
 }
 input:hover,
+select:hover,
 input[type='text']:hover,
 input[type='email']:hover,
 input[type='password']:hover,
 input[type='number']:hover,
 input:focus,
+select:focus,
 input[type='text']:focus,
 input[type='email']:focus,
 input[type='password']:focus,
@@ -220,6 +223,82 @@ main {
     opacity: 0;
     height: 0;
 }
+
+/* Main > Product list */
+.products-title {
+    display: flex;
+    align-items: center;
+}
+
+.products-sort {
+    margin: 0 0 0 auto;
+    height: auto;
+}
+
+.products {
+    padding: 0;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(10, 5, 25, .05); /* IE */
+    border-bottom: 2px solid rgba(var(--acc1), .05);
+    cursor: pointer;
+}
+.product-item .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.product-item:last-child {
+    border-bottom: none;
+}
+.product-item .image {
+    display: flex;
+    flex: 1 20%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px 0 0;
+    max-width: 48px;
+    max-height: 48px;
+    background: rgba(10, 5, 25, .05); /* IE */
+    background: rgba(var(--acc1), .05);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.product-item .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-width: 48px;
+    min-height: 48px;
+}
+.product-item h2 {
+    margin: 0 20px 0 0;
+    font-size: 1.2em;
+}
+.product-item .cost {
+    margin: 0 0 0 auto;
+}
+.product-item svg {
+    width: 0;
+    opacity: 0;
+    fill: rgb(10, 5, 25); /* IE */
+    fill: rgba(var(--acc1));
+    transition: .2s ease;
+}
+.product-item:hover svg {
+    width: 24px;
+    opacity: 1;
+}
+
+.product-expanded {
+
+}
+
 
 /* Main > Cart */
 .cart {
