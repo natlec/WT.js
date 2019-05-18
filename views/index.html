@@ -108,6 +108,12 @@
                     </form>
                 </li>
             {{/each}}
+            {{#-if cartCount '===' 0}}
+                <div class="cart-empty">
+                    <h2>:(</h2>
+                    <p>Your cart is empty, choose some products from our collection!</p>
+                </div>
+            {{/-if}}
         </ul>
         <!-- Cart banner -->
         <div class="cart-info" title="Toggle cart">
