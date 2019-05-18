@@ -8,6 +8,9 @@
 	// Handle document load completion
     $(document).ready(function() {
 
+		// Cart visible state
+		let cartVisible = false
+
 		// Create Products model instance & load data
 		window.app.Products = new window.app.Products()
         window.app.Products.getData()
@@ -32,7 +35,7 @@
 			})
 
 			// Update cart when product item form is submitted
-			$('.product-item .add').click(function() {
+			$('.product-item .button').click(function() {
 				window.app.Cart.updateCart($(this).data('id'), $(this).prev().val(), 0)
 			})
 		})
@@ -51,11 +54,19 @@
 			// Load cart into view
 			$('.cart').html(data)
 
+			// Show cart accordingly after template compile
+			if(cartVisible) {
+				$('.cart').addClass('cart-expanded')
+				$('body').addClass('hide-scroll')
+				$('.cart .toggle').text('Hide cart')
+			}
+
 			// Handle cart banner click
-			$('.cart .cart-info').click(function() {
+			$('.cart-info').click(function() {
 				$('.cart').toggleClass('cart-expanded')
 				$('body').toggleClass('hide-scroll')
-				$('.cart .toggle').text($('.cart .toggle').text() == 'Show cart' ? 'Hide cart' : 'Show cart')
+				$('.cart .toggle').text($('.cart').hasClass('cart-expanded') ? 'Hide cart' : 'Show cart')
+				cartVisible=!cartVisible
 			})
 
 			// Update cart when quantity input of cart item changed
