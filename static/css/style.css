@@ -396,8 +396,8 @@ main {
     overflow: hidden;
     background: rgb(10, 5, 25); /* IE */
     background: rgb(var(--acc1));
-    box-shadow: 0 0 10px rgba(10, 5, 25, .2); /* IE */
-    box-shadow: 0 0 10px rgba(var(--acc1), .2);
+    box-shadow: 0 0 8px rgba(10, 5, 25, .2); /* IE */
+    box-shadow: 0 0 8px rgba(var(--acc1), .2);
     color: rgba(255, 255, 255, .7); /* IE */
     color: rgba(var(--bCol), var(--opac));
     z-index: 99;
