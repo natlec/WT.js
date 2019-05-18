@@ -4,7 +4,7 @@
         Model: Products
 ***/
 
-(function(){
+(function() {
 
     // Create event for data change
     let productsChangedEvent = new Event('productsChanged')
@@ -35,7 +35,7 @@
 
     // Returns array of products in category & sorted accordingly
     Products.prototype.getProducts = function(category, order) {
-        if (this.products === []) {
+        if(this.products === []) {
             return []
         } else {
             return this.products

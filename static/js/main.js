@@ -21,20 +21,22 @@
             let products = window.app.Products.getProducts()
 
 			// Compile product template for products
-            let template = Handlebars.compile($("#product-template").html())
+            let template = Handlebars.compile($('#product-template').html())
 			let data = template({ products: products })
 			// Load products into view
-            $(".products").html(data)
+            $('.products').html(data)
 
 			// Handle product item click
-			$(".product-item .header").click(function() {
+			$('.product-item .header').click(function() {
 				$(this).parents('.product-item').toggleClass('product-expanded')
 			})
 
 			// Prevent navigation to action page on form submit
-			$("form").submit(function(e) {
-				window.app.Cart.getData()
-				e.preventDefault()
+			$('form').submit(function(e) {
+				$.post($(this).attr('action'), $(this).serialize(), function(response) {
+					window.app.Cart.getData()
+				},'json')
+				return false
 			})
 		})
 
@@ -43,27 +45,26 @@
             let cart = window.app.Cart.getCart()
 
 			// Compile cart template for cart
-            let template = Handlebars.compile($("#cart-template").html())
+            let template = Handlebars.compile($('#cart-template').html())
             let data = template({ 
 				cart: cart, 
 				cartTotal: 100,
 				cartCount: window.app.Cart.getCartSize()
 			})
 			// Load cart into view
-			$(".cart").html(data)
+			$('.cart').html(data)
 
 			// Handle cart banner click
-			$(".cart-info").click(function() {
+			$('.cart-info').click(function() {
 				$('.cart').toggleClass('cart-expanded')
 				$('body').toggleClass('hide-scroll')
 				$('.cart .toggle').text($('.cart .toggle').text() == 'Show cart' ? 'Hide cart' : 'Show cart')
 			})
+		})
 
-			// Prevent navigation to action page on form submit
-			$("form").submit(function(e) {
-				window.app.Cart.getData()
-				e.preventDefault()
-			})
+		// Update cart when quantity input of cart item changed
+		$(document).on('keyup input change', '.cart .quantity', function() {
+			window.app.Cart.updateCart('productid=' + $(this).data('id') + '&quantity=' + $(this).val() + '&update=1')
 		})
 
 		// Enable if-statement logic for Handlebars templates

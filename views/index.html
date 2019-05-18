@@ -101,11 +101,7 @@
                 <li class="cart-item">
                     <h3 class="name">{{name}}</h3>
                     <h4 class="cost">${{cost}}</h4>
-                    <form action="/cart" method="post">
-                        <input class="quantity" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" required>
-                        <input type="hidden" name="productid" value="1">
-                        <input type="hidden" name="update" value="1">
-                    </form>
+                    <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" required>
                 </li>
             {{/each}}
             {{#-if cartCount '===' 0}}
