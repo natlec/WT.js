@@ -56,7 +56,7 @@
     <!-- Product item template -->
     <script id="product-template" type="text/x-handlebars-template">
         {{#each products}}
-            <li class="product-item" data-id="{{id}}">
+            <li class="product-item">
                 <div class="image">
                     <img src="{{image_url}}" alt="{{name}}">
                 </div>
@@ -80,12 +80,10 @@
                     <div class="info">
                         {{{description}}}
                         {{#-if inventory '>' 0 }}
-                            <form method="POST" action="/cart">
-                                <input type="number" name="quantity" value="1" min="1" max="{{inventory}}" required>
-                                <input type="hidden" name="productid" value="{{id}}" required>
-                                <input type="submit" value="Add to Cart" title="Add to cart">
-                                <input type="hidden" name="update" value="1">
-                            </form>
+                            <div class="form">
+                                <input class="quantity" type="number" placeholder="Quantity" name="quantity" value="1" min="1" max="{{inventory}}" required>
+                                <input class="add" data-id="{{id}}" type="submit" value="Add to Cart" title="Add to cart">
+                            </div>
                         {{/-if}}
                     </div>
                 </div>

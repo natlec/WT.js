@@ -31,12 +31,9 @@
 				$(this).parents('.product-item').toggleClass('product-expanded')
 			})
 
-			// Prevent navigation to action page on form submit
-			$('form').submit(function(e) {
-				$.post($(this).attr('action'), $(this).serialize(), function(response) {
-					window.app.Cart.getData()
-				},'json')
-				return false
+			// Update cart when product item form is submitted
+			$('.product-item .add').click(function() {
+				window.app.Cart.updateCart($(this).data('id'), $(this).prev().val(), 0)
 			})
 		})
 
@@ -48,23 +45,23 @@
             let template = Handlebars.compile($('#cart-template').html())
             let data = template({ 
 				cart: cart, 
-				cartTotal: 100,
+				cartTotal: window.app.Cart.getCartTotal(),
 				cartCount: window.app.Cart.getCartSize()
 			})
 			// Load cart into view
 			$('.cart').html(data)
 
 			// Handle cart banner click
-			$('.cart-info').click(function() {
+			$('.cart .cart-info').click(function() {
 				$('.cart').toggleClass('cart-expanded')
 				$('body').toggleClass('hide-scroll')
 				$('.cart .toggle').text($('.cart .toggle').text() == 'Show cart' ? 'Hide cart' : 'Show cart')
 			})
-		})
 
-		// Update cart when quantity input of cart item changed
-		$(document).on('keyup input change', '.cart .quantity', function() {
-			window.app.Cart.updateCart('productid=' + $(this).data('id') + '&quantity=' + $(this).val() + '&update=1')
+			// Update cart when quantity input of cart item changed
+			$(document).on('keyup input change', '.cart .quantity', function() {
+				window.app.Cart.updateCart($(this).data('id'), $(this).val(), 1)
+			})
 		})
 
 		// Enable if-statement logic for Handlebars templates

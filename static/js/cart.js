@@ -16,11 +16,13 @@
     function Cart() {
         this.url = '/cart'
         this.cart = []
+        this.cartTotal = 0
     }
 
     // Function to fetch data from API & store locally
     Cart.prototype.getData = function() {
         let self = this
+
         fetch(self.url, {
             method: 'GET',
             cache: 'default'
@@ -29,53 +31,76 @@
             return response.json()
         })
         .then(json => {
-            // Store data as Cart property
+            // Store data of cart locally
             self.cart = json.cart
+
+            // Store total of cart locally
+            self.cart.forEach(item => {
+                self.cartTotal += item.cost
+            })
+
             // Trigger data change event
             window.dispatchEvent(cartChangedEvent)
         })
     }
 
     // Function to update cart data & store locally
-    Cart.prototype.updateCart = function(params) {
+    Cart.prototype.updateCart = function(id, quantity, update) {
         let self = this
-        if (params != '') {
+
+        if (id | quantity | update) {
             if(updateTimer != false) clearTimeout(updateTimer)
+
 			updateTimer = setTimeout(() => {
 				fetch('/cart', {
 					method: 'POST',
-					body: params
+					body: 'productid=' + id + '&quantity=' + quantity + '&update=' + update
 				})
 				.then(response => {
 					return response.json()
 				})
 				.then(json => {
-					// Update cart data in Cart property
-					self.cart = json.cart
+					// Update cart data
+                    self.cart = json.cart
+                    
+                    // Update cart total
+                    self.cartTotal = 0
+                    if(self.cart[id]) {
+                        self.cartTotal += (self.cart[id].cost * quantity)
+                    } else {
+                        // Only recalculate total if item removed
+                        self.cart.forEach(item => {
+                            self.cartTotal += item.cost
+                        })
+                    }
+
 					// Trigger data change event
 					window.dispatchEvent(cartChangedEvent)
-					updateTimer = false
+                    updateTimer = false
+                    
+                    // Return true to indicate successful cart update
+                    return true
 				})
-			}, 200)
+			}, 100)
         }
+
+        // Assume no success for cart update
+        return false
     }
 
     // Returns array of products in cart
     Cart.prototype.getCart = function() {
-        if(this.cart === []) {
-            return []
-        } else {
-            return this.cart
-        }
+        return (this.cart) ? this.cart : []
+    }
+
+    // Returns total of all products in cart
+    Cart.prototype.getCartTotal = function() {
+        return (this.cart) ? +this.cartTotal.toFixed(2) : 0
     }
 
     // Returns number of products in cart
     Cart.prototype.getCartSize = function() {
-        if(this.cart === []) {
-            return 0
-        } else {
-            return this.cart.length
-        }
+        return (this.cart) ? this.cart.length : 0
     }
 
     // Export to global window object

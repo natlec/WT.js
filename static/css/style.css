@@ -374,11 +374,11 @@ main {
     width: 100%;
     margin: 0;
 }
-.product-item .info form {
+.product-item .info .form {
     margin: 0 0 0 40px;
     white-space: nowrap;
 }
-.product-item .info form input[type='number'] {
+.product-item .info .form input[type='number'] {
     width: 60px;
 }
 
@@ -484,10 +484,6 @@ main {
 }
 .cart-item:last-child {
     border-bottom: none;
-}
-.cart-item form {
-    display: flex;
-    align-items: center;
 }
 .cart-item .name {
     width: 100%;

@@ -18,6 +18,7 @@
     // Function to fetch data from API & store locally
     Products.prototype.getData = function() {
         let self = this
+
         fetch(self.url, {
             method: 'GET',
             cache: 'default'
@@ -26,8 +27,9 @@
             return response.json()
         })
         .then(json => {
-            // Store data as Products property
+            // Store data of products locally
             self.products = json.products
+            
             // Trigger data change event
             window.dispatchEvent(productsChangedEvent)
         })
@@ -35,11 +37,7 @@
 
     // Returns array of products in category & sorted accordingly
     Products.prototype.getProducts = function(category, order) {
-        if(this.products === []) {
-            return []
-        } else {
-            return this.products
-        }
+        return (this.products) ? this.products : []
     }
 
     // Export to global window object
