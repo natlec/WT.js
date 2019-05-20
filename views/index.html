@@ -95,6 +95,17 @@
     <script id="cart-template" type="text/x-handlebars-template">
         <!-- Cart items -->
         <ul class="cart-items">
+            {{#-if cartCount '===' 0}}
+                <div class="cart-empty">
+                    <h2>:(</h2>
+                    <p>Your cart is empty, choose some products from our collection!</p>
+                </div>
+            {{else}}
+                <div class="cart-title">
+                    <h2>Cart</h2>
+                    <p>You've added the following items to your cart: </p>
+                </div>
+            {{/-if}}
             {{#each cart}}
                 <li class="cart-item">
                     <h3 class="name">{{name}}</h3>
@@ -102,12 +113,6 @@
                     <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" required>
                 </li>
             {{/each}}
-            {{#-if cartCount '===' 0}}
-                <div class="cart-empty">
-                    <h2>:(</h2>
-                    <p>Your cart is empty, choose some products from our collection!</p>
-                </div>
-            {{/-if}}
         </ul>
         <!-- Cart banner -->
         <div class="cart-info" title="Toggle cart">

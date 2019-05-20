@@ -325,7 +325,7 @@ main {
     font-size: 1.4em;
 }
 .product-item .quantity {
-    margin: 0 20px 0 0;
+    margin: 0 10px 0 0;
     white-space: nowrap;
 }
 .product-item .cost {
@@ -520,6 +520,20 @@ main {
         0 2px 5px rgba(100, 50, 255, .2); /* IE */
     box-shadow: inset 0 0 0 2px rgb(var(--acc2)),
         0 2px 5px rgba(var(--acc2), .2);
+}
+
+.cart-title {
+    padding: 50px 0 20px;
+    width: 100%;
+    font: 400 1em 'Inter', sans-serif;
+    color: rgba(255, 255, 255, .7); /* IE */
+    color: rgba(var(--bCol), .7);
+}
+.cart-title h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(255, 255, 255); /* IE */
+    color: rgb(var(--bCol));
 }
 
 .cart-empty {
