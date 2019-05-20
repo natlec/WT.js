@@ -453,7 +453,7 @@ main {
 }
 .cart-info .icon span {
     position: absolute;
-    margin: -3px 0 0;
+    margin: -2px 0 0;
     font: 700 .7em 'Inter', sans-serif;
     color: rgb(10, 5, 25); /* IE */
     color: rgb(var(--acc1));
