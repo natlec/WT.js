@@ -117,7 +117,11 @@
                 <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
                     <path d="m0 4h5l1 4h24l-2 14h-22l-2.5-16h-3.5zm10 20a3 3 0 0 0 0 6 3 3 0 0 0 0-6m14 0a3 3 0 0 0 0 6 3 3 0 0 0 0-6"/>
                 </svg>
-                <span>{{cartCount}}</span>
+                {{#if cartCount '<=' 999}}
+                    <span>{{cartCount}}</span>
+                {{else}}
+                    <span>$</span>
+                {{/if}}
             </div>
             <b class="toggle">Show cart</b>
         </div>
