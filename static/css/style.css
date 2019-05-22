@@ -479,11 +479,8 @@ main {
     display: flex;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 2px solid rgba(255, 255, 255, .05); /* IE */
-    border-bottom: 2px solid rgba(var(--bCol), .05);
-}
-.cart-item:last-child {
-    border-bottom: none;
+    border-top: 2px solid rgba(255, 255, 255, .05); /* IE */
+    border-top: 2px solid rgba(var(--bCol), .05);
 }
 .cart-item .name {
     width: 100%;
