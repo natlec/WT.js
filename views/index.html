@@ -110,8 +110,15 @@
                 <li class="cart-item">
                     <h3 class="name">{{name}}</h3>
                     <h4 class="cost">${{cost}}</h4>
-                    <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" min="0" required>
-                    <button class="delete" data-id="{{id}}"></button>
+                    <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" title="Quantity of item" min="0" required>
+                    <button class="button delete" data-id="{{id}}" title="Delete item from cart">
+                        <svg viewBox="0 0 32 32" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke-width="6">
+                                <path d="m2 2 28 28"/>
+                                <path d="m2 30 28-28"/>
+                            </g>
+                        </svg>
+                    </button>
                 </li>
             {{/each}}
         </ul>

@@ -40,6 +40,11 @@
         return (this.products) ? this.products : []
     }
 
+    // Returns a product as object according to id
+    Products.prototype.getProduct = function(id) {
+        return (this.products) ? this.products[id] : []
+    }
+
     // Export to global window object
     window.app = window.app || {}
     window.app.Products = Products

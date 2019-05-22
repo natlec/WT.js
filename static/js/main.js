@@ -69,9 +69,21 @@
 				cartVisible=!cartVisible
 			})
 
-			// Update cart when quantity input of cart item changed
+			// Update cart when quantity input of cart item changed (prevent changing quantity in excess of inventory)
 			$(document).on('keyup input change', '.cart .quantity', function() {
-				window.app.Cart.updateCart($(this).data('id'), $(this).val(), 1)
+				let id = $(this).data('id')
+				let val = $(this).val()
+				let inventory =  window.app.Products.getProduct(id).inventory
+				if(val <= inventory) {
+					window.app.Cart.updateCart(id, val, 1)
+				} else {
+					$(this).val(inventory)
+				}
+			})
+
+			// Update cart when delete button of cart item clicked
+			$('.cart .delete').click(function() {
+				window.app.Cart.updateCart($(this).data('id'), 0, 1)
 			})
 		})
 

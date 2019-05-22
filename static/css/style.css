@@ -172,6 +172,7 @@ input[type='submit'] {
     color: rgb(255, 255, 255); /* IE */
     color: rgb(var(--bCol));
     border: none;
+    border-radius: 2px;
     background: rgb(10, 5, 25); /* IE */
     background: rgb(var(--acc1));
     box-shadow: none;
@@ -517,6 +518,27 @@ main {
         0 2px 5px rgba(100, 50, 255, .2); /* IE */
     box-shadow: inset 0 0 0 2px rgb(var(--acc2)),
         0 2px 5px rgba(var(--acc2), .2);
+}
+.cart-item .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 10px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, .025); /* IE */
+    background: rgba(var(--bCol), .025);
+    box-shadow: inset 0 0 0 2px #fff; /* IE */
+    box-shadow: inset 0 0 0 2px rgba(var(--bCol), .1);
+}
+.cart-item .delete:hover,
+.cart-item .delete:focus {
+    background: rgb(100, 50, 255); /* IE */
+    background: rgb(var(--acc2));
+}
+.cart-item .delete svg {
+    stroke: rgb(255, 255, 255); /* IE */
+    stroke: rgb(var(--bCol));
 }
 
 .cart-title {
