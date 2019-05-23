@@ -402,7 +402,7 @@ main {
     color: rgba(255, 255, 255, .7); /* IE */
     color: rgba(var(--bCol), var(--opac));
     z-index: 99;
-    transition: .4s ease;
+    transition: .5s ease;
 }
 .cart-expanded {
     height: 100vh;
