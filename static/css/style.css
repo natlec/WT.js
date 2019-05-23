@@ -402,7 +402,7 @@ main {
     color: rgba(255, 255, 255, .7); /* IE */
     color: rgba(var(--bCol), var(--opac));
     z-index: 99;
-    transition: .3s ease;
+    transition: .4s ease;
 }
 .cart-expanded {
     height: 100vh;
@@ -465,15 +465,16 @@ main {
     align-self: stretch;
     flex-direction: column;
     list-style: none;
-    padding: 20px 20vw 0;
+    padding: 20px 10vw 0;
     margin: 0 0 90px;
     height: 100%;
     opacity: 0;
     overflow-y: scroll;
-    transition: .2s ease;
+    transition: .4s ease;
 }
 .cart-expanded .cart-items {
     opacity: 1;
+    padding: 20px 20vw 0;
 }
 
 .cart-item {
