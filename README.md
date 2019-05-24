@@ -31,6 +31,10 @@ The backend of the web-application supports a JSON API, this allows the frontend
   * `update` — if set to 1: quantity of cart item with `productid` is modified; if set to 0: quantity of cart item with `productid` is appended
 * `/cart` — Delivers a JSON representation of all cart items
 
+The frontend of the web-application consists of an `index.html` files, which provides the overall structure (view) of the web-application. The `index.html` file also declares templates for the cart & product items to be compiled by Handlebars in the `main.js` file. The purpose of each JavaScript file within the web-application is as follows:
+* `main.js` — Provides the overall functionality (controller) of the web-application and imports the `cart.js` & `products.js` models.
+* `products.js` — Provides functions for fetching & sorting product data (model) by contacting the JSON APIs mentioned previously.
+* `cart.js` — Provides functions for fetching & modifying cart data (model) by contacting the JSON APIs mentioned previously.
 
 Build
 -----
