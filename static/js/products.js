@@ -53,24 +53,24 @@
             
             // Sort products accordingly
             if(order === 'pricehigh') {
-
+                
                 // Sort by price high to low
-                self.products.sort(function(a, b) { return -(a.unit_cost - b.unit_cost) })
+                self.products.sort((a, b) => { return -(a.unit_cost - b.unit_cost) })
 
             } else if(order === 'pricelow') {
 
                 // Sort by price low to high
-                self.products.sort(function(a, b) { return a.unit_cost - b.unit_cost })
-
+                self.products.sort((a, b) => { return a.unit_cost - b.unit_cost })
+                
             } else if(order === 'nameA') {
 
                 // Sort by by name (A-Z)
-                self.products.sort(function(a, b) { return a.name.localeCompare(b.name) })
+                self.products.sort((a, b) => { return a.name.localeCompare(b.name) })
 
             } else if(order === 'nameZ') {
 
                 // Sort by by name (Z-A)
-                self.products.sort(function(a, b) { return -(a.name.localeCompare(b.name)) })
+                self.products.sort((a, b) => { return -(a.name.localeCompare(b.name)) })
 
             }
 
