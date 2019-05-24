@@ -26,9 +26,9 @@ The backend of the web-application supports a JSON API, this allows the frontend
 * `/static/<path>` — Delivers static files (CSS, JS, images & fonts)
 * `/products` — Delivers a JSON representation of all product items
 * `/cart` — Accepts POST requests modify the cart, with form fields:
-      * `productid` — id of the product to be added/modified
-      * `quantity` — quantity to be added/modified
-      * `update` — if set to 1: quantity of cart item with `productid` is modified; if set to 0: quantity of cart item with `productid` is appended
+  * `productid` — id of the product to be added/modified
+  * `quantity` — quantity to be added/modified
+  * `update` — if set to 1: quantity of cart item with `productid` is modified; if set to 0: quantity of cart item with `productid` is appended
 * `/cart` — Delivers a JSON representation of all cart items
 
 
