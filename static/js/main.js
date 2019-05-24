@@ -33,6 +33,9 @@
 			$('.product-item .header').click(function() {
 				$(this).parents('.product-item').toggleClass('product-expanded')
 			})
+			$('.product-item .image').click(function() {
+				$(this).parents('.product-item').toggleClass('product-expanded')
+			})
 
 			// Update cart when product item form is submitted
 			$('.product-item .button').click(function() {
@@ -87,7 +90,7 @@
 			})
 		})
 
-		// Enable if-statement logic for Handlebars templates
+		// Hacky stuff to enable if-statement logic for Handlebars templates
 		Handlebars.registerHelper('-if', function(v1, operator, v2, options) {
 			switch (operator) {
 				case '==':

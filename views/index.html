@@ -57,7 +57,7 @@
     <script id="product-template" type="text/x-handlebars-template">
         {{#each products}}
             <li class="product-item">
-                <div class="image">
+                <div class="image" title="Toggle product information">
                     <img src="{{image_url}}" alt="{{name}}">
                 </div>
                 <div class="right">
@@ -72,10 +72,6 @@
                             <p class="quantity">Out of stock</p>
                         {{/-if}}
                         <h3 class="cost">${{unit_cost}}</h3>
-                        <svg viewBox="0 0 48 48" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="m17.17 32.92 9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/>
-                            <path d="m0-.25h48v48h-48z" fill="none"/>
-                        </svg>
                     </div>
                     <div class="info">
                         {{{description}}}
