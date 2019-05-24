@@ -40,7 +40,7 @@
             </select>
         </div>
         <br>
-        <!-- Products -->
+        <!-- Product items -->
         <table class="products"></table>
     </main>
 
@@ -57,10 +57,12 @@
     <script id="product-template" type="text/x-handlebars-template">
         {{#each products}}
             <td class="product-item">
+                <!-- Product item image -->
                 <div class="image" title="Toggle product information">
                     <img src="{{image_url}}" alt="{{name}}">
                 </div>
                 <div class="right">
+                    <!-- Product item header -->
                     <div class="header" title="Toggle product information">
                         <div class="title">
                             <b>{{category}}'s</b>
@@ -73,6 +75,7 @@
                         {{/-if}}
                         <h3 class="cost">${{unit_cost}}</h3>
                     </div>
+                    <!-- Product item info -->
                     <div class="info">
                         {{{description}}}
                         {{#-if inventory '>' 0 }}
@@ -87,10 +90,11 @@
         {{/each}}
     </script>
 
-    <!-- Cart item template -->
+    <!-- Cart template -->
     <script id="cart-template" type="text/x-handlebars-template">
-        <!-- Cart items -->
+        <!-- Cart -->
         <ul class="cart-items">
+            <!-- Cart title -->
             {{#-if cartCount '===' 0}}
                 <div class="cart-empty">
                     <h2>:(</h2>
@@ -102,6 +106,7 @@
                     <p>You've added the following items to your cart: </p>
                 </div>
             {{/-if}}
+            <!-- Cart items -->
             {{#each cart}}
                 <li class="cart-item">
                     <h3 class="name">{{name}}</h3>
