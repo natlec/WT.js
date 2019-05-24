@@ -18,7 +18,7 @@
 Introduction
 ------------
 
-The WT.js is an online store web-application made using JQuery & Handlebars for the frontend and Python for the backend.
+THE WT is an online store web-application made using JQuery & Handlebars for the frontend and Python for the backend.
 
 The backend of the web-application supports a JSON API, this allows the frontend to fetch JSON lists of product items & cart items and send POST requests to modify cart items refer to the following to access the API:
 
