@@ -36,6 +36,7 @@ The frontend of the web-application consists of an `index.html` file, which prov
 * `products.js` — Provides functions for fetching & sorting product data (model) by contacting the JSON APIs mentioned previously.
 * `cart.js` — Provides functions for fetching & modifying cart data (model) by contacting the JSON APIs mentioned previously.
 
+
 Build
 -----
 
