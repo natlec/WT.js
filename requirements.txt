@@ -1,5 +1,0 @@
-Bottle
-bottle-sqlite
-WebTest
-beaker
-bottle-beaker
