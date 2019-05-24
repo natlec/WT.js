@@ -41,7 +41,7 @@
         </div>
         <br>
         <!-- Products -->
-        <ul class="products"></ul>
+        <table class="products"></table>
     </main>
 
     <!-- Cart -->
@@ -56,7 +56,7 @@
     <!-- Product item template -->
     <script id="product-template" type="text/x-handlebars-template">
         {{#each products}}
-            <li class="product-item">
+            <td class="product-item">
                 <div class="image" title="Toggle product information">
                     <img src="{{image_url}}" alt="{{name}}">
                 </div>
@@ -83,7 +83,7 @@
                         {{/-if}}
                     </div>
                 </div>
-            </li>
+            </td>
         {{/each}}
     </script>
 
