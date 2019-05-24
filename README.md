@@ -49,7 +49,9 @@ Credits
 -------
 
 This project uses a variety of libraries, plugins & frameworks, feel free to check em' out:
-* [**Bottle (MIT)**](https://github.com/bottlepy/bottle) — This is a fast and simple micro-framework for python web-applications.
+* [**Bottle (MIT)**](https://github.com/bottlepy/bottle) — This is a fast and simple micro-framework for Python web-applications.
+* [**Bottle-sqlite (MIT)**](https://github.com/bottlepy/bottle-sqlite) — This is a Bottle plugin to simplify the use of sqlite databases.
 * [**Bottle-beaker (MIT)**](https://github.com/bottlepy/bottle-beaker) — This is a Bottle plugin to session and caching library with WSGI Middleware.
+* [**Beaker (BSD)**](https://github.com/bottlepy/bottle-beaker) — This is a web session and general caching Python library that includes WSGI middleware for use in web applications.
 * [**Handlebars (MIT)**](https://github.com/wycats/handlebars.js/) — This is a JavaScript library for semantic templates.
 * [**JQuery (MIT)**](https://github.com/jquery/jquery) — This is a JavaScript library designed to simplify the client-side scripting of HTML.
