@@ -258,6 +258,7 @@ label {
 /* Main > Products */
 .products {
     padding: 0;
+    margin: 0;
 }
 .product-item {
     display: flex;
