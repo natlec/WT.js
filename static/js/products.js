@@ -35,14 +35,48 @@
         })
     }
 
-    // Returns array of products in category & sorted accordingly
-    Products.prototype.getProducts = function(category, order) {
+    // Returns an array of all products
+    Products.prototype.getProducts = function() {
         return (this.products) ? this.products : []
     }
 
     // Returns a product as object according to id
     Products.prototype.getProduct = function(id) {
         return (this.products) ? this.products[id] : []
+    }
+
+    // Function to sort products accordingly
+    Products.prototype.sortProducts = function(order) {
+        let self = this
+
+        if (self.products && order) {
+            
+            // Sort products accordingly
+            if(order === 'pricehigh') {
+
+                // Sort by price high to low
+                self.products.sort(function(a, b) { return -(a.unit_cost - b.unit_cost) })
+
+            } else if(order === 'pricelow') {
+
+                // Sort by price low to high
+                self.products.sort(function(a, b) { return a.unit_cost - b.unit_cost })
+
+            } else if(order === 'nameA') {
+
+                // Sort by by name (A-Z)
+                self.products.sort(function(a, b) { return a.name.localeCompare(b.name) })
+
+            } else if(order === 'nameZ') {
+
+                // Sort by by name (Z-A)
+                self.products.sort(function(a, b) { return -(a.name.localeCompare(b.name)) })
+
+            }
+
+            // Trigger data change event
+			window.dispatchEvent(productsChangedEvent)
+        }
     }
 
     // Export to global window object

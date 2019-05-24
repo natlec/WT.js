@@ -90,9 +90,14 @@
 			})
 		})
 
+		// Update products list when product sort button click
+		$('.products-sort').change(function() {
+			window.app.Products.sortProducts($(this).val())
+		})
+
 		// Hacky stuff to enable if-statement logic for Handlebars templates
 		Handlebars.registerHelper('-if', function(v1, operator, v2, options) {
-			switch (operator) {
+			switch(operator) {
 				case '==':
 					return (v1 == v2) ? options.fn(this) : options.inverse(this)
 				case '===':
