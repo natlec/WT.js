@@ -41,7 +41,7 @@
         </div>
         <br>
         <!-- Product items -->
-        <table class="products"></table>
+        <ul class="products"></ul>
     </main>
 
     <!-- Cart -->
@@ -56,7 +56,7 @@
     <!-- Product item template -->
     <script id="product-template" type="text/x-handlebars-template">
         {{#each products}}
-            <td class="product-item">
+            <li class="product-item">
                 <!-- Product item image -->
                 <div class="image" title="Toggle product information">
                     <img src="{{image_url}}" alt="{{name}}">
@@ -80,13 +80,13 @@
                         {{{description}}}
                         {{#-if inventory '>' 0 }}
                             <div class="form">
-                                <input class="quantity" type="number" placeholder="Quantity" name="quantity" value="1" min="1" max="{{inventory}}" required>
+                                <input class="quantity" type="number" placeholder="Quantity" title="Quantity" name="quantity" value="1" min="1" max="{{inventory}}" required>
                                 <input class="button" data-id="{{id}}" type="submit" value="Add to Cart" title="Add to cart">
                             </div>
                         {{/-if}}
                     </div>
                 </div>
-            </td>
+            </li>
         {{/each}}
     </script>
 
@@ -111,8 +111,8 @@
                 <li class="cart-item">
                     <h3 class="name">{{name}}</h3>
                     <h4 class="cost">${{cost}}</h4>
-                    <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" name="quantity" value="{{quantity}}" title="Quantity of item" min="0" required>
-                    <button class="button delete" data-id="{{id}}" title="Delete item from cart">
+                    <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" title="Quantity" name="quantity" value="{{quantity}}" title="Quantity of item" min="0" required>
+                    <button class="button delete" data-id="{{id}}" title="Delete from cart">
                         <svg viewBox="0 0 32 32" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                             <g stroke-width="6">
                                 <path d="m2 2 28 28"/>
