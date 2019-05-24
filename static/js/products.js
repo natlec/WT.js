@@ -53,7 +53,7 @@
             
             // Sort products accordingly
             if(order === 'pricehigh') {
-                
+
                 // Sort by price high to low
                 self.products.sort((a, b) => { return -(a.unit_cost - b.unit_cost) })
 
@@ -75,8 +75,14 @@
             }
 
             // Trigger data change event
-			window.dispatchEvent(productsChangedEvent)
+            window.dispatchEvent(productsChangedEvent)
+            
+            // Return true to indicate successful product sort
+            return true
         }
+
+        // Assume no success for product sort
+        return false
     }
 
     // Export to global window object
