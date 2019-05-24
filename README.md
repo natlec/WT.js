@@ -37,7 +37,7 @@ Build
 
 To test the application in development, run the `main.py` file in the terminal. The development server can be accessed at `http://127.0.0.1:8010/` as long as the `main.py` file is running in the terminal.
 
-To create a test database with product items, run the `dbschema.py` file in the terminal.
+To create a test database with random product items, run the `dbschema.py` file in the terminal.
 
 
 Credits
