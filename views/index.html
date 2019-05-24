@@ -32,7 +32,8 @@
                 <h1>All products</h1>
                 <p>Explore our entire range of products for both men & women.</p>
             </div>
-            <select class="products-sort button-alt" name="products-sort">
+            <label for="products-sort">Sort products</label>
+            <select class="products-sort button-alt" name="products-sort" title="Sort products">
                 <option value="pricehigh">Sort by price high to low</option>
                 <option selected value="pricelow">Sort by price low to high</option>
                 <option value="nameA">Sort by name (A-Z)</option>
@@ -80,6 +81,7 @@
                         {{{description}}}
                         {{#-if inventory '>' 0 }}
                             <div class="form">
+                                <label for="quantity">Quantity</label>
                                 <input class="quantity" type="number" placeholder="Quantity" title="Quantity" name="quantity" value="1" min="1" max="{{inventory}}" required>
                                 <input class="button" data-id="{{id}}" type="submit" value="Add to Cart" title="Add to cart">
                             </div>
@@ -96,21 +98,21 @@
         <ul class="cart-items">
             <!-- Cart title -->
             {{#-if cartCount '===' 0}}
-                <div class="cart-empty">
-                    <h2>:(</h2>
-                    <p>Your cart is empty, choose some products from our collection!</p>
-                </div>
+            <li class="cart-empty">
+                <h2>:(</h2>
+                <p>Your cart is empty, choose some products from our collection!</p>
             {{else}}
-                <div class="cart-title">
-                    <h2>Cart</h2>
-                    <p>You've added the following items to your cart: </p>
-                </div>
+            <li class="cart-title">
+                <h2>Cart</h2>
+                <p>You've added the following items to your cart: </p>
             {{/-if}}
+            </li>
             <!-- Cart items -->
             {{#each cart}}
                 <li class="cart-item">
                     <h3 class="name">{{name}}</h3>
                     <h4 class="cost">${{cost}}</h4>
+                    <label for="quantity">Quantity</label>
                     <input class="quantity" data-id="{{id}}" type="number" placeholder="Quantity" title="Quantity" name="quantity" value="{{quantity}}" title="Quantity of item" min="0" required>
                     <button class="button delete" data-id="{{id}}" title="Delete from cart">
                         <svg viewBox="0 0 32 32" width="16" height="16" xmlns="http://www.w3.org/2000/svg">

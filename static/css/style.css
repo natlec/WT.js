@@ -236,6 +236,11 @@ main {
     opacity: 0;
     height: 0;
 }
+label {
+	position: absolute;
+	clip: rect(0px, 0px, 0px, 0px);
+	left: 0
+}
 
 /* Main > Product banner */
 .products-banner {
