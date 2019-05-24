@@ -30,12 +30,11 @@
             $('.products').html(data)
 
 			// Handle product item click
-			$('.product-item .header').click(function() {
+			$('.product-item .header').click(toggleProduct)
+			$('.product-item .image').click(toggleProduct)
+			function toggleProduct() {
 				$(this).parents('.product-item').toggleClass('product-expanded')
-			})
-			$('.product-item .image').click(function() {
-				$(this).parents('.product-item').toggleClass('product-expanded')
-			})
+			}
 
 			// Update cart when product item form is submitted
 			$('.product-item .button').click(function() {
