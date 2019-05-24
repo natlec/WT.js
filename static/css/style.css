@@ -635,6 +635,9 @@ footer {
     }
 
     /* Main > Products */
+    .product-item {
+        padding: 40px 0;
+    }
     .products-banner,
     .product-item,
     .product-item .info {
