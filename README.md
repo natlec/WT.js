@@ -20,12 +20,12 @@ Introduction
 
 THE WT is an online store web-application made using JQuery & Handlebars for the frontend and Python for the backend.
 
-The backend of the web-application supports a JSON API, this allows the frontend to fetch JSON lists of product items & cart items and send POST requests to modify cart items refer to the following to access the API:
+The backend of the web-application consists of a JSON API, this allows the frontend to fetch JSON lists of product items & cart items and send POST requests to modify cart items; refer to the following to access the API:
 
 * `/` — Delivers the index.html template, this is the only URL that users can access directly.
 * `/static/<path>` — Delivers static files (CSS, JS, images & fonts)
 * `/products` — Delivers a JSON representation of all product items
-* `/cart` — Accepts POST requests modify the cart, with form fields:
+* `/cart` — Accepts POST requests to modify the cart, with form fields:
   * `productid` — id of cart item product
   * `quantity` — quantity of cart item product
   * `update` — if set to 1: quantity of cart item with `productid` is modified; if set to 0: quantity of cart item with `productid` is appended
