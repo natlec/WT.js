@@ -34,10 +34,10 @@
             // Store data of cart locally
             self.cart = json.cart
 
-            // Store total of cart locally
-            self.cart.forEach(item => {
-                self.cartTotal += item.cost
-            })
+            // Store total of cart locally 
+            for(let i=0; i<self.cart.length; i++) {
+                self.cartTotal += self.cart[i].cost
+            }
 
             // Trigger data change event
             window.dispatchEvent(cartChangedEvent)
@@ -69,9 +69,9 @@
                         self.cartTotal += (self.cart[id].cost * quantity)
                     } else {
                         // Only recalculate total if item removed
-                        self.cart.forEach(item => {
-                            self.cartTotal += item.cost
-                        })
+                        for(let i=0; i<self.cart.length; i++) {
+                            self.cartTotal += self.cart[i].cost
+                        }
                     }
 
 					// Trigger data change event
