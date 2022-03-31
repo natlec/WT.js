@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-    <img alt="The WT" src="/static/img/logo.png" width="150px">
+    <img alt="The WT" src="/static/img/logo.png" width="150">
 </p>
 <br>
 <p align="center">
@@ -12,6 +12,10 @@
     <a href="#build">Build</a>&nbsp;&nbsp;/&nbsp;&nbsp;
     <a href="#credits">Credits</a>
   </b>
+</p>
+<br>
+<p align="center">
+    <img alt="Example of WT.js in action" src="/static/img/wtjs.gif" width="800">
 </p>
 <br>
 
